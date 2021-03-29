@@ -1,0 +1,265 @@
+#################################### START SETUP #####################################
+default_border pixel 2
+smart_borders on
+hide_edge_borders smart_no_gaps
+#focus_follows_mouse no
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && notify-send "$(pactl list sources | grep Mute | cut -z -f3 )"
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
+
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+#bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+
+#exec_always --no-startup-id trayer --align right --height 20
+exec --no-startup-id nm-applet
+exec_always setxkbmap -layout us,mk -option 'grp:alt_r_shift_toggle'
+exec_always --no-startup-id ~/.config/i3/polybar.sh &
+exec_always picom
+exec_always ~/.fehbg
+exec_always wal -R
+exec_always dunst
+exec albert
+
+exec --no-startup-id "termite"
+for_window [class="Termite"] move scratchpad
+#################################### END SETUP #####################################
+
+
+font pango:Noto Sans 8
+# test
+bindsym F12 scratchpad show
+# start alacritty
+bindsym Mod4+Return exec alacritty 
+# start dmenu 
+bindsym Mod4+D exec dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#007BAD' -sf '#EEEEEE' -fn 'Source Code Pro-8'
+# start brave
+bindsym Mod4+B exec brave
+# start qutebrowser
+bindsym Mod4+Q exec qutebrowser
+# start thunar
+bindsym Mod4+N exec pcmanfm
+# file manager
+bindsym Mod4+G exec --no-startup-id alacritty -e ranger
+# start music
+bindsym Mod4+M exec alacritty -e mocp --theme nightly_theme -m ~/RuS/Music
+# start termite  
+bindsym Mod4+T exec termite
+# lock keyboard & mouse
+bindsym Mod4+grave exec scrcpy
+# start calc
+bindsym Mod4+KP_Add exec mate-calc 
+# start lxappearance
+bindsym Mod4+backslash exec lxappearance
+
+
+# screenlocking
+bindsym Control+Mod4+L exec betterlockscreen -l dim -t "BTFO"
+# start discord
+bindsym Control+Mod4+D exec discord
+
+
+# start sgtk
+bindsym Shift+Mod4+D exec sgtk-grid -s 48
+# start virt-manager
+bindsym Shift+Mod4+M exec virt-manager
+# start mysql-workbench
+bindsym Shift+Mod4+w exec mysql-workbench
+# android file transfer
+bindsym Shift+Mod4+A exec android-file-transfer
+# polybar toggle 
+bindsym Shift+Mod4+T exec polybar-msg cmd toggle
+# exit i3
+bindsym Shift+Mod4+E exec ~/scripts/exit.sh
+# start cool-retro-term
+bindsym Shift+Mod4+Return exec cool-retro-term
+# start lxappearance
+bindsym Shift+Mod4+backslash exec themix-gui
+
+
+# gaps
+bindsym Control+Shift+Mod4+P gaps inner all toggle 10
+# take, save and paste a SS
+bindsym Print exec maim  | tee ~/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png && notify-send -t 150 "  "
+# SS active window
+bindsym Control+Shift+Mod4+A exec maim -i $(xdotool getactivewindow) | tee ~/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png && notify-send -t 150 "  "
+# select a SS
+bindsym Control+Shift+Mod4+S exec maim -s | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage shadow.png && notify-send   -t 150 "  "
+
+
+# pick a theme
+bindsym Control+Mod1+T exec ~/scripts/theme_picker.sh
+# touchpad control
+bindsym Control+Mod1+X exec ~/scripts/tpctrl.sh 
+# emoji
+bindsym Control+Mod1+E exec ~/scripts/dmenuunicode.sh
+# displayselect
+bindsym Control+Mod1+D exec ~/scripts/displayselect.sh
+# dmenumount
+bindsym Control+Mod1+M exec ~/scripts/dmenumount.sh
+# audio output
+bindsym Control+Mod1+A exec ~/scripts/audioctrl.sh
+# spid
+bindsym Control+Mod1+S exec gksu -S ~/scripts/spid.sh && notify-send DONE
+
+
+
+set $up k
+set $down j
+set $left h
+set $right l
+# change focus
+bindsym Mod4+$left focus left
+bindsym Mod4+$down focus down
+bindsym Mod4+$up focus up
+bindsym Mod4+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
+
+# move focused window
+bindsym Mod4+Shift+$left move left
+bindsym Mod4+Shift+$down move down
+bindsym Mod4+Shift+$up move up
+bindsym Mod4+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Down move down
+bindsym Mod4+Shift+Up move up
+# split in horizontal orientation
+bindsym Mod4+v split h
+
+# split in vertical orientation
+bindsym Mod4+c split v
+
+# enter fullscreen mode for the focused container
+bindsym Mod4+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym Mod4+s layout stacking
+bindsym Mod4+w layout tabbed
+bindsym Mod4+e layout toggle split
+
+# toggle tiling / floating
+bindsym Mod4+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym Mod4+space focus mode_toggle
+
+# focus the parent container
+bindsym Mod1+a focus parent
+
+# focus the child container
+bindsym Mod1+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym Mod4+Shift+minus move scratchpad
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym Mod4+1 workspace number $ws1
+bindsym Mod4+2 workspace number $ws2
+bindsym Mod4+3 workspace number $ws3
+bindsym Mod4+4 workspace number $ws4
+bindsym Mod4+5 workspace number $ws5
+bindsym Mod4+6 workspace number $ws6
+bindsym Mod4+7 workspace number $ws7
+bindsym Mod4+8 workspace number $ws8
+bindsym Mod4+9 workspace number $ws9
+bindsym Mod4+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym Mod4+Shift+1 move container to workspace number $ws1
+bindsym Mod4+Shift+2 move container to workspace number $ws2
+bindsym Mod4+Shift+3 move container to workspace number $ws3
+bindsym Mod4+Shift+4 move container to workspace number $ws4
+bindsym Mod4+Shift+5 move container to workspace number $ws5
+bindsym Mod4+Shift+6 move container to workspace number $ws6
+bindsym Mod4+Shift+7 move container to workspace number $ws7
+bindsym Mod4+Shift+8 move container to workspace number $ws8
+bindsym Mod4+Shift+9 move container to workspace number $ws9
+bindsym Mod4+Shift+0 move container to workspace number $ws10
+
+# kill focused window
+bindsym Mod4+Shift+q kill
+# reload the configuration file
+bindsym Mod4+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Mod4+Shift+r restart
+# exit i3 (logs you out of your X session)
+#bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or Mod4+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym Mod4+r mode "default"
+}
+
+
+bindsym Mod4+r mode "resize"
+# class                 border  bground text    indicator BORDER
+client.focused          #09A7E6 #09A7E6 #FFFFFF #2E9EF4   #2E9EF4
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF
+
+#bar {
+#	font pango:PragmataPro 7
+#	status_command i3blocks
+#	position top
+#	tray_output primary
+#	tray_padding 1
+#	colors {
+#  		background #121212
+#    	statusline #DCDCDC
+#    	separator  #1C6EA9
+#		
+#  	focused_workspace  #09A7E6 #09A7E6 #000000
+#   	active_workspace   #333333 #222222 #FFFFFF
+#    	inactive_workspace #333333 #222222 #888888
+#    	urgent_workspace   #2F343A #A10000 #FFFFFF
+#    	binding_mode       #2F343A #E77100 #000000
+#  }
+#}
