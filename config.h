@@ -21,11 +21,12 @@ static const char col_gray4[]       = "#ffffff";
 static const char col_purp[]        = "#6500a7";
 static const char col_cyan[]        = "#005577";
 static const char col_cyan1[]       = "#0075b7";
+static const char col_cyan3[]       = "#03a2c1";
 static const char col_cyan2[]       = "#0095F7";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_purp,  col_gray4  },
+	[SchemeSel]  = { col_gray4, col_cyan1,  col_gray4  },
 };
 
 /* tagging */
@@ -81,19 +82,22 @@ static const char *ranger[]  = { "alacritty", "-e", "ranger", NULL };
 static const char *mocp[]  = { "alacritty", "-e", "mocp", "--theme", "nightly_theme", "-m", "~/RuS/Music", NULL };
 static const char *discord[]  = { "discord", NULL };
 static const char *FX[]  = { "pcmanfm", NULL };
+static const char *SC[]  = { "scrcpy", NULL };
 static const char *VM[]  = { "virt-manager", NULL };
 static const char *calc[]  = { "mate-calc", NULL };
 static const char *lxAppearance[]  = { "lxappearance", NULL };
 static const char *themix[]  = { "themix-gui", NULL };
-static const char *PrtScr[]  = { "maim", "|", "tee", "~/Screenshots/$(date", "+%s).png ", "|", "xclip", "-selection", "clipboard", "-t", "image/png", "&&", "notify-send", "-t", "150", " DONE ", NULL };
-static const char *PrtScrA[]  = { "maim", "-s", "|", "convert", "-", "( ", "+clone", "-backgroung", "black", "-shadow", "80x3+5+5", ")", "+swap", "-background", "none", "-layers", "merge", "+repage", "shadow.png", "&&", "notify-send", "-t", "150", " DONE ", NULL };
+static const char *PrtScr[]  = {"/home/shaolinrus/scripts/PrtScr.sh", NULL };
+static const char *PrtScrA[]  = { "/home/shaolinrus/scripts/PrtScrA.sh", NULL };
+static const char *PrtScrS[]  = { "/home/shaolinrus/scripts/PrtScrS.sh", NULL };
 
 
 static const char *dmenuThemes[]  = { "/home/shaolinrus/scripts/theme_picker.sh", NULL };
 static const char *dmenuEmojis[]  = { "/home/shaolinrus/scripts/dmenuunicode.sh", NULL };
 static const char *dwmExit[]  = { "/home/shaolinrus/scripts/dwmExit.sh", NULL };
 static const char *dmenuAudio[]  = { "/home/shaolinrus/scripts/audioctrl.sh", NULL };
-static const char *TpCtl[]  = { "/home/shaolinrus/scripts/audioctrl.sh", NULL };
+static const char *TpCtl[]  = { "/home/shaolinrus/scripts/tpctrl.sh", NULL };
+static const char *micMute[]  = { "/home/shaolinrus/scripts/mic.sh", NULL };
 static const char *dmenuSpid[]  = { "gksu", "-S", "/home/shaolinrus/scripts/spid.sh", "&&", "notify-send", "DONE",  NULL };
 
 static Key keys[] = {
@@ -103,6 +107,7 @@ static Key keys[] = {
     { 0,0x1008ff12,			spawn,									{.v = mute } },
     { 0,0x1008ff02,			spawn,									{.v = upBRT } },
     { 0,0x1008ff03,			spawn,									{.v = downBRT } },
+    { 0,0x1008ffb2,			spawn,									{.v = micMute } },
     { 0,0xff61,				spawn,									{.v = PrtScr } },
 
 	{ MODKEY,				        XK_Return,	spawn,				{.v = termcmd } },
@@ -120,8 +125,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,				0x5c,	   	spawn,				{.v = themix } },
 	{ MODKEY|ShiftMask,				XK_e,	   	spawn,				{.v = dwmExit } },
 	{ MODKEY|ShiftMask,				XK_m,	   	spawn,				{.v = VM } },
+	{ MODKEY|ShiftMask,				XK_s,	   	spawn,				{.v = SC } },
 
-	{ MODKEY|ControlMask|ShiftMask,	XK_s,	   	spawn,				{.v = PrtScrA } },
+	{ MODKEY|ControlMask|ShiftMask,	XK_A,	   	spawn,				{.v = PrtScrA } },
+	{ MODKEY|ControlMask|ShiftMask,	XK_s,	   	spawn,				{.v = PrtScrS } },
 
 	{ Mod1Mask|ControlMask,         XK_t,	   	spawn,          	{.v = dmenuThemes } },
 	{ Mod1Mask|ControlMask,         XK_e,	   	spawn,          	{.v = dmenuEmojis } },
