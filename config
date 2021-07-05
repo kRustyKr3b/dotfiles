@@ -1,4 +1,4 @@
-#################################### START SETUP #####################################
+#################################### SETUP START #####################################
 default_border pixel 2
 smart_borders on
 hide_edge_borders smart_no_gaps
@@ -10,49 +10,59 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 #bindsym Mod4+d exec --no-startup-id i3-dmenu-desktop
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 
 #exec_always --no-startup-id trayer --align right --height 20
-exec --no-startup-id nm-applet
-exec_always setxkbmap -layout us,mk -option 'grp:alt_r_shift_toggle'
-exec_always --no-startup-id ~/.config/i3/polybar.sh &
+exec lxsession
+#exec albert
+exec_always ~/.config/i3/polybar.sh &
 exec_always picom
-exec_always ~/.fehbg
 exec_always wal -R
 exec_always dunst
-exec albert
 
 exec --no-startup-id "termite"
 for_window [class="Termite"] move scratchpad
-#################################### END SETUP #####################################
+#################################### SETUP END #####################################
 
 
-font pango:Noto Sans 8
-# test
+font pango:Iosevka Term 8
+# scratchpad
 bindsym F12 scratchpad show
 # start alacritty
-bindsym Mod4+Return exec alacritty 
+bindsym Mod4+Return exec alacritty
 # start dmenu 
-bindsym Mod4+D exec dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#007BAD' -sf '#EEEEEE' -fn 'Source Code Pro-8'
-# start brave
-bindsym Mod4+B exec brave
+bindsym Mod4+D exec dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#007BAD' -sf '#EEEEEE' -fn 'Iosevka Term-9'
+# start firefox
+bindsym Mod4+B exec firefox
+# start termite
+bindsym Mod4+T exec termite
 # start qutebrowser
 bindsym Mod4+Q exec qutebrowser
-# start thunar
-bindsym Mod4+N exec pcmanfm
+# start spacefm
+bindsym Mod4+N exec spacefm
 # file manager
-bindsym Mod4+G exec --no-startup-id alacritty -e ranger
+bindsym Mod4+G exec alacritty -e ranger
 # start music
-bindsym Mod4+M exec alacritty -e mocp --theme nightly_theme -m ~/RuS/Music
-# start termite  
-bindsym Mod4+T exec termite
-# lock keyboard & mouse
+bindsym Mod4+M exec alacritty -e mocp
+# scrcpy
 bindsym Mod4+grave exec scrcpy
+# start xkill
+bindsym Mod4+Escape exec termite -e xkill
 # start calc
 bindsym Mod4+KP_Add exec mate-calc 
+# start C::B
+bindsym Mod4+KP_End exec codeblocks 
+# start blender
+bindsym Mod4+KP_Down exec blender 
+# start idea
+bindsym Mod4+KP_Next exec idea 
+# start mysql
+bindsym Mod4+KP_Left exec mysql-workbench
+# start qtcreator
+bindsym Mod4+KP_Begin exec qtcreator
 # start lxappearance
 bindsym Mod4+backslash exec lxappearance
 
@@ -61,24 +71,22 @@ bindsym Mod4+backslash exec lxappearance
 bindsym Control+Mod4+L exec betterlockscreen -l dim -t "BTFO"
 # start discord
 bindsym Control+Mod4+D exec discord
+# start qbittorent
+bindsym Control+Mod4+Q exec qbittorrent
 
 
+# start brave
+bindsym Shift+Mod4+B exec brave
 # start sgtk
-bindsym Shift+Mod4+D exec sgtk-grid -s 48
+bindsym Shift+Mod4+D exec jgmenu
 # start virt-manager
 bindsym Shift+Mod4+M exec virt-manager
-# start mysql-workbench
-bindsym Shift+Mod4+w exec mysql-workbench
 # android file transfer
 bindsym Shift+Mod4+A exec android-file-transfer
 # polybar toggle 
 bindsym Shift+Mod4+T exec polybar-msg cmd toggle
 # exit i3
 bindsym Shift+Mod4+E exec ~/scripts/exit.sh
-# start cool-retro-term
-bindsym Shift+Mod4+Return exec cool-retro-term
-# start lxappearance
-bindsym Shift+Mod4+backslash exec themix-gui
 
 
 # gaps
@@ -105,6 +113,7 @@ bindsym Control+Mod1+M exec ~/scripts/dmenumount.sh
 bindsym Control+Mod1+A exec ~/scripts/audioctrl.sh
 # spid
 bindsym Control+Mod1+S exec gksu -S ~/scripts/spid.sh && notify-send DONE
+#
 
 
 
@@ -201,11 +210,11 @@ bindsym Mod4+Shift+9 move container to workspace number $ws9
 bindsym Mod4+Shift+0 move container to workspace number $ws10
 
 # kill focused window
-bindsym Mod4+Shift+q kill
+bindsym Mod4+Shift+Q kill
 # reload the configuration file
-bindsym Mod4+Shift+c reload
+bindsym Mod4+Shift+C reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod4+Shift+r restart
+bindsym Mod4+Shift+R restart
 # exit i3 (logs you out of your X session)
 #bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -237,7 +246,7 @@ mode "resize" {
 
 bindsym Mod4+r mode "resize"
 # class                 border  bground text    indicator BORDER
-client.focused          #09A7E6 #09A7E6 #FFFFFF #2E9EF4   #2E9EF4
+client.focused          #09A7E6 #09A7E6 #FFFFFF #2E9EF4   #09A7E6 
 client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
 client.unfocused        #333333 #222222 #888888 #292D2E   #222222
 client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
@@ -255,9 +264,9 @@ client.background       #FFFFFF
 #  		background #121212
 #    	statusline #DCDCDC
 #    	separator  #1C6EA9
-#		
-#  	focused_workspace  #09A7E6 #09A7E6 #000000
-#   	active_workspace   #333333 #222222 #FFFFFF
+		
+#	  	focused_workspace  #09A7E6 #09A7E6 #000000
+#  		active_workspace   #333333 #222222 #FFFFFF
 #    	inactive_workspace #333333 #222222 #888888
 #    	urgent_workspace   #2F343A #A10000 #FFFFFF
 #    	binding_mode       #2F343A #E77100 #000000
