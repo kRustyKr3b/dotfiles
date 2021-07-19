@@ -1,0 +1,62 @@
+.tab-background {
+    color: #eeeeee !important;
+    background: rgba(100,100,100,.2);
+    border-radius:	1 !important;
+    margin-bottom:	2px !important;
+    margin-top:		2px !important;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.3) !important;
+    border-bottom-width: 0px !important;
+	background-image: /home/shaolinrus/firefox2.jpg !important;
+}
+
+#tabbrowser-tabs {
+    --tab-min-height: 25px !important;
+}
+#scrollbutton-up,
+#scrollbutton-down {
+    border-top-width: 0 !important;
+    border-bottom-width: 0 !important;
+}
+
+.tabbrowser-tab[selected] .tab-background {
+    /*background: solid rgba(0,0,0,.9)!important;*/
+    background: rgba(100,100,100,.2);
+    border: 1px solid rgba(1,188,188,1) !important;
+}
+
+.tabbrowser-tab[selected] .tab-label {
+    background: solid rgba(0,0,0,.9)!important;
+    color: #eeeeee !important;
+}
+
+#TabsToolbar {
+    border-bottom: 0px solid #000000 !important;
+}
+
+.tabbrowser-tab:not([visuallyselected="true"]), .tabbrowser-tab:-moz-lwtheme {
+    background: solid rgba(10,10,10,.5)!important;
+    color: #eeeeee !important;
+}
+
+.tabbrowser-tab:not([selected]) .tab-background {
+    background: solid rgba(10,10,10,.5)!important;
+    border: 1px solid rgba(10,10,10,1) !important;
+}
+
+.tab-content {
+    padding: 0 var(--inline-tab-padding);
+    background: solid rgba(250,250,250,.5)!important;
+}
+
+:root[uidensity=compact] {
+  toolbar-start-end-padding: 4px;
+  toolbarbutton-outer-padding: 2px;
+  toolbarbutton-inner-padding: 2px;
+  bookmark-block-padding: 1px;
+}
+
+toolbar:-moz-lwtheme {
+    appearance: none;
+    color: #eeeeee;
+    background: solid rgba(0,0,0,.9)!important;
+}

@@ -5,8 +5,8 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4 
 
-let &t_8f = "\e[38;2;%lu;%lu;%lum"
-let &t_8b = "\e[38;2;%lu;%lu;%lum"
+"let &t_8f = "\e[38;2;%lu;%lu;%lum"
+"let &t_8b = "\e[38;2;%lu;%lu;%lum"
 
 let mapleader="\<Space>"
 nmap <silent> <leader>r "=nr2char(getchar())<cr>P
@@ -42,6 +42,7 @@ call plug#begin('/home/shaolinrus/.vim/autoload')
 	"Plug 'npxbr/glow.nvim', {'do': ':GlowInstall', 'branch': 'main'}
 	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
+	Plug 'navarasu/onedark.nvim'
 	Plug 'dylanaraps/wal.vim'
 	Plug 'whatyouhide/vim-gotham'
 	Plug 'w0ng/vim-hybrid'
@@ -59,5 +60,6 @@ aug end
 	let g:Hexokinase_highlighters = ['backgroundfull']
 	let g:Hexokinase_refreshEvents = ['TextChanged', 'InsertLeave', 'BufRead']
 	let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
+	let g:onedark_style = 'darker'
 	
-	colorscheme gotham
+	colorscheme gotham256

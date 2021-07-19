@@ -80,7 +80,7 @@ static const char *upBRT[] = { "brightnessctl", "set", "+10%", NULL };
 static const char *downBRT[] = { "brightnessctl", "set", "10%-", NULL };
 
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *termcmd1[]  = { "termite", NULL };
+static const char *termcmd1[]  = { "alacritty", NULL };
 static const char *webcmd[]  = { "firefox", NULL };
 static const char *lock[]  = { "betterlockscreen", "-l",  "-t", "BTFO", NULL };
 static const char *ranger[]  = { "alacritty", "-e", "ranger", NULL };
@@ -114,7 +114,7 @@ static const char *dmenuAudio[]  = { "/home/shaolinrus/scripts/audioctrl.sh", NU
 static const char *TpCtl[]  = { "/home/shaolinrus/scripts/tpctrl.sh", NULL };
 static const char *micMute[]  = { "/home/shaolinrus/scripts/mic.sh", NULL };
 static const char *saveDots[]  = { "/home/shaolinrus/scripts/saveDots.sh", NULL };
-static const char *dmenuSpid[]  = { "gksu", "-S", "/home/shaolinrus/scripts/spid.sh", "&&", "notify-send", "DONE",  NULL };
+static const char *dmenuSpid[]  = { "gksu", "-s", "/home/shaolinrus/scripts/spid.sh", "&&", "notify-send", "DONE",  NULL };
 
 static Key keys[] = {
 	/* modifier             key							 function        argument */

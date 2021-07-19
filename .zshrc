@@ -3,7 +3,7 @@ export VISUAL=/usr/bin/nvim
 export QT_QPA_PLATFORMTHEME=qt5ct
 export MANPAGER="nvim -c 'set ft=man' -"
 
-HISTFILE=/home/rus_og/.config/.histfile
+HISTFILE=/home/shaolinrus/.config/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
@@ -17,27 +17,30 @@ zmodload zsh/complist
 autoload -Uz compinit && compinit
 PS1="%B%F{$(cat ~/prompt_cols | cut -d. -f1)}[%n%f%F{#888888}@%f%F{$(cat ~/prompt_cols | cut -d. -f2)}%m %1~]%(#.#.$)%f%b "
 
-alias zrc='sudo nvim ~/.zshrc'
-alias irc='sudo nvim ~/.config/i3/config'
+alias zrc='nvim ~/.zshrc'
+alias irc='nvim ~/.config/i3/config'
 alias prc='nvim ~/.config/polybar/config.ini'
 alias drc='nvim ~/suckless/dwm-6.2/config.h'
 alias xrc='sudo nvim /usr/local/bin/startdwm'
-alias ch='cp ~/suckless/dwm-6.2/config.h ~/dotfiles'
-alias vrc='sudo vim ~/.vimrc'
-alias nvrc='sudo nvim ~/.config/nvim/init.vim'
+alias XRC='nvim ~/.Xresources'
+alias vrc='vim ~/.vimrc'
+alias nvrc='nvim ~/.config/nvim/init.vim'
 alias arc='nvim ~/.config/alacritty/alacritty.yml'
+alias ch='cp ~/suckless/dwm-6.2/config.h ~/dotfiles'
 
+alias B='bluetoothctl'
+alias R='ranger'
+alias S='startx'
+alias N='neofetch'
+alias T='nvim to-do*'
+alias IP='curl ifconfig.co'
+alias XX='xrdb -merge ~/.Xresources'
 alias sv='sudo vim'
 alias sn='sudo nvim'
 alias sp='sudo pacman'
 alias n='nvim'
-alias B='bluetoothctl'
-alias R='ranger'
+alias wireshark='gksu wireshark'
 alias rr='rustc'
-alias S='startx'
-alias N='neofetch'
-alias T='nvim to-do.md'
-alias IP='curl ifconfig.co'
 alias MD='/home/shaolinrus/suckless/dwm-6.2 && sudo make clean install && cd '
 alias ka='killall'
 alias stl='sudo systemctl'

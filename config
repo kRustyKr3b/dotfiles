@@ -16,12 +16,12 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 
 #exec_always --no-startup-id trayer --align right --height 20
-exec lxsession
+#exec --no-startup-id picom
 #exec albert
-exec_always ~/.config/i3/polybar.sh &
-exec_always picom
-exec_always wal -R
-exec_always dunst
+exec --no-startup-id dunst
+exec --no-startup-id lxsession
+exec_always --no-startup-id wal -R
+exec_always --no-startup-id ~/.config/i3/polybar.sh &
 
 exec --no-startup-id "termite"
 for_window [class="Termite"] move scratchpad
@@ -38,7 +38,7 @@ bindsym Mod4+D exec dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#007BAD' -sf '#EE
 # start firefox
 bindsym Mod4+B exec firefox
 # start termite
-bindsym Mod4+T exec termite
+bindsym Mod4+T exec alacritty
 # start qutebrowser
 bindsym Mod4+Q exec qutebrowser
 # start spacefm
@@ -112,7 +112,7 @@ bindsym Control+Mod1+M exec ~/scripts/dmenumount.sh
 # audio output
 bindsym Control+Mod1+A exec ~/scripts/audioctrl.sh
 # spid
-bindsym Control+Mod1+S exec gksu -S ~/scripts/spid.sh && notify-send DONE
+bindsym Control+Mod1+S exec  ~/scripts/spid.sh && notify-send DONE
 #
 
 
@@ -248,7 +248,7 @@ bindsym Mod4+r mode "resize"
 # class                 border  bground text    indicator BORDER
 client.focused          #09A7E6 #09A7E6 #FFFFFF #2E9EF4   #09A7E6 
 client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
-client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.unfocused        #666666 #222222 #888888 #292D2E   #666666
 client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
