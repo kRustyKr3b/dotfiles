@@ -8,6 +8,8 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
+  session.lazy_restore:
+    global: true
 
   content.autoplay:
     global: false
@@ -68,11 +70,12 @@ settings:
 
   colors.statusbar.url.success.http.fg:
     global: '#64ed02'
-
   colors.statusbar.url.success.https.fg:
     global: '#64ed02'
-
   colors.statusbar.url.warn.fg:
     global: '#dd2c04'
 
-
+  tabs.indicator.width:
+    global: 5
+  tabs.title.format:
+    global: '{audio} {current_title}'
