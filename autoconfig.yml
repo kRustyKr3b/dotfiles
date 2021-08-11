@@ -6,13 +6,39 @@
 
 config_version: 2
 settings:
+  auto_save.session:
+    global: true
+
+  content.autoplay:
+    global: false
+  content.blocking.enabled:
+    global: true
   content.notifications.enabled:
     https://www.reddit.com: false
   zoom.default:
     global: '67'
+  content.javascript.enabled:
+    global: true
+  #fonts.default_family: 
+    #global: 'DejaVu'
+  #fonts.default_size: 
+    #global: '12px'
+  
+  hints.border:
+    global: '1px solid #000000'
+  colors.hints.bg:
+    global: '#dddddd'
+  colors.hints.fg:
+    global: '#101010'
+
   colors.statusbar.caret.bg: 
     global: '#7208d6'
   colors.statusbar.caret.fg: 
+    global: '#1e1e1e'
+
+  colors.statusbar.caret.selection.bg: 
+    global: '#7208d6'
+  colors.statusbar.caret.selection.fg: 
     global: '#1e1e1e'
   colors.downloads.start.bg: 
     global: '#03b0bc'
@@ -35,7 +61,7 @@ settings:
     global: '#dda304'
 
   colors.statusbar.insert.bg:
-    global: '#1e1e1e'
+    global: '#222222'
   colors.statusbar.insert.fg:
     global: '#64ed02'
   
