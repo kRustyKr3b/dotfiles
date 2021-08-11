@@ -110,11 +110,11 @@ static const char *dmenuThemes[]  = { "/home/shaolinrus/scripts/dwm_theme_picker
 static const char *dmenuEmojis[]  = { "/home/shaolinrus/scripts/dmenuunicode.sh", NULL };
 static const char *displaySelect[]  = { "/home/shaolinrus/scripts/displayselect.sh", NULL };
 static const char *dwmExit[]  = { "/home/shaolinrus/scripts/dwmExit.sh", NULL };
-static const char *dmenuAudio[]  = { "/home/shaolinrus/scripts/audioctrl.sh", NULL };
-static const char *TpCtl[]  = { "/home/shaolinrus/scripts/tpctrl.sh", NULL };
-static const char *micMute[]  = { "/home/shaolinrus/scripts/mic.sh", NULL };
+static const char *dmenuAudio[]  = { "/home/shaolinrus/scripts/audioctrl.sh", NULL};
+static const char *TpCtl[]  = { "/home/shaolinrus/scripts/tpctrl.sh", NULL};
+static const char *micMute[]  = { "/home/shaolinrus/scripts/mic.sh", NULL};
 static const char *saveDots[]  = { "/home/shaolinrus/scripts/saveDots.sh", NULL };
-static const char *dmenuSpid[]  = { "gksu", "-s", "/home/shaolinrus/scripts/spid.sh", "&&", "notify-send", "DONE",  NULL };
+static const char *dmenuSpid[]  = { "/home/shaolinrus/scripts/spid.sh", NULL };
 
 static Key keys[] = {
 	/* modifier             key							 function        argument */

@@ -1,7 +1,9 @@
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
+export EDITOR="nvim"
+export VISUAL="nvim"
+export SUDO_EDITOR="nvim"
 export QT_QPA_PLATFORMTHEME=qt5ct
-export MANPAGER="nvim -c 'set ft=man' -"
+#export MANPAGER="nvim -c 'set ft=man' -"
+export PATH=$PATH:/home/shaolinrus/.local/bin
 
 HISTFILE=/home/shaolinrus/.config/.histfile
 HISTSIZE=1000
@@ -23,10 +25,12 @@ alias prc='nvim ~/.config/polybar/config.ini'
 alias drc='nvim ~/suckless/dwm-6.2/config.h'
 alias xrc='sudo nvim /usr/local/bin/startdwm'
 alias XRC='nvim ~/.Xresources'
-alias vrc='vim ~/.vimrc'
+alias F='nvim ~/.mozilla/firefox/6wm86drv.default-release/chrome/userChrome.css'
+alias vrc='nvim ~/.vimrc'
 alias nvrc='nvim ~/.config/nvim/init.vim'
 alias arc='nvim ~/.config/alacritty/alacritty.yml'
 alias ch='cp ~/suckless/dwm-6.2/config.h ~/dotfiles'
+alias cf='cp ~/.mozilla/firefox/6wm86drv.default-release/chrome/userChrome.css ~/dotfiles'
 
 alias B='bluetoothctl'
 alias R='ranger'
@@ -44,8 +48,9 @@ alias rr='rustc'
 alias MD='/home/shaolinrus/suckless/dwm-6.2 && sudo make clean install && cd '
 alias ka='killall'
 alias stl='sudo systemctl'
-alias ls='ls -F --color=auto --group-directories-first'
-alias la='ls -FA --color=auto --group-directories-first'
+alias ls='exa --icons -F --color=auto --group-directories-first'
+alias la='exa --icons -Fa --color=auto --group-directories-first'
+alias ll='exa --icons -Fl --color=auto --group-directories-first'
 alias rp='nvim /home/rus_og/raspored'
 alias ci='cpupower frequency-info | grep policy -A 2'
 alias hs='history 1'
@@ -59,6 +64,8 @@ alias -s txt=nvim
 alias -s md=nvim
 alias -s c=nvim
 alias -s cpp=nvim
+alias -s h=nvim
+alias -s rs=nvim
 
 
 typeset -A key

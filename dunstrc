@@ -51,7 +51,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 2
+    separator_height = 1
 
     # Padding between text and separator.
     padding = 8
@@ -61,7 +61,7 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 5
+    frame_width = 3
 
     # Defines color of the frame around the notification window.
     frame_color = "#3895b7"
@@ -292,16 +292,16 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#ffffff"
-    foreground = "#222222"
-    timeout = 05
+    background = "#222222"
+    foreground = "#ffffff"
+    timeout = 03
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
     background = "#222222"
     foreground = "#ffffff"
-    timeout = 05
+    timeout = 03
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
@@ -419,10 +419,13 @@
 #    summary = *says*
 #    urgency = critical
 #
-#[twitter]
-#    appname = Pidgin
-#    summary = *twitter.com*
-#    urgency = normal
+[facebook]
+	frame_width = 1
+    background = "#aaaaaa"
+    foreground = "#222222"
+    summary = *facebook.com*
+    urgency = normal
+	timeout = 1
 #
 #[stack-volumes]
 #    appname = "some_volume_notifiers"

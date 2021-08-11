@@ -82,11 +82,9 @@ static const char *downBRT[] = { "brightnessctl", "set", "10%-", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *termcmd1[]  = { "alacritty", NULL };
 static const char *webcmd[]  = { "firefox", NULL };
-static const char *lock[]  = { "betterlockscreen", "-l",  "-t", "BTFO", NULL };
 static const char *ranger[]  = { "alacritty", "-e", "ranger", NULL };
 static const char *mocp[]  = { "alacritty", "-e", "mocp", NULL };
 static const char *jgmenu[]  = { "jgmenu", "&&", "rm","jgmenu-lockfile", NULL };
-static const char *discord[]  = { "discord", NULL };
 static const char *FX[]  = { "spacefm", NULL };
 static const char *SC[]  = { "scrcpy", NULL };
 static const char *VM[]  = { "virt-manager", NULL };
@@ -97,7 +95,7 @@ static const char *PrtScr[]  = {"/home/shaolinrus/scripts/PrtScr.sh", NULL };
 static const char *PrtScrA[]  = { "/home/shaolinrus/scripts/PrtScrA.sh", NULL };
 static const char *PrtScrS[]  = { "/home/shaolinrus/scripts/PrtScrS.sh", NULL };
 static const char *KILL[]  = { "xkill", NULL };
-static const char *qbit[]  = { "qbittorrent", NULL };
+static const char *QB[]  = { "qutebrowser", NULL };
 static const char *AFT[]  = { "android-file-transfer", NULL };
 
 static const char *CB[]  = { "codeblocks", NULL };
@@ -106,15 +104,21 @@ static const char *ID[]  = { "idea", NULL };
 static const char *MY[]  = { "mysql-workbench", NULL };
 static const char *QT[]  = { "qtcreator", NULL };
 
+static const char *lock[]  = { "betterlockscreen", "-l",  "-t", "BTFO", NULL };
+static const char *discord[]  = { "discord", NULL };
+static const char *qbit[]  = { "qbittorrent", NULL };
+static const char *nb[]  = { "alacritty", "-e", "newsboat", NULL };
+
 static const char *dmenuThemes[]  = { "/home/shaolinrus/scripts/dwm_theme_picker.sh", NULL };
 static const char *dmenuEmojis[]  = { "/home/shaolinrus/scripts/dmenuunicode.sh", NULL };
+static const char *dmenuSpid[]  = { "/home/shaolinrus/scripts/spid.sh", NULL };
+static const char *dmenuAudio[]  = { "/home/shaolinrus/scripts/audioctrl.sh", NULL};
+static const char *dmenuMount[]  = { "/home/shaolinrus/scripts/dmenumount.sh", NULL};
 static const char *displaySelect[]  = { "/home/shaolinrus/scripts/displayselect.sh", NULL };
 static const char *dwmExit[]  = { "/home/shaolinrus/scripts/dwmExit.sh", NULL };
-static const char *dmenuAudio[]  = { "/home/shaolinrus/scripts/audioctrl.sh", NULL };
-static const char *TpCtl[]  = { "/home/shaolinrus/scripts/tpctrl.sh", NULL };
-static const char *micMute[]  = { "/home/shaolinrus/scripts/mic.sh", NULL };
+static const char *TpCtl[]  = { "/home/shaolinrus/scripts/tpctrl.sh", NULL};
+static const char *micMute[]  = { "/home/shaolinrus/scripts/mic.sh", NULL};
 static const char *saveDots[]  = { "/home/shaolinrus/scripts/saveDots.sh", NULL };
-static const char *dmenuSpid[]  = { "gksu", "-s", "/home/shaolinrus/scripts/spid.sh", "&&", "notify-send", "DONE",  NULL };
 
 static Key keys[] = {
 	/* modifier             key							 function        argument */
@@ -145,6 +149,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_l,	   	spawn,				{.v = lock } },
 	{ MODKEY|ControlMask,           XK_d,	   	spawn,				{.v = discord } },
 	{ MODKEY|ControlMask,           XK_q,	   	spawn,				{.v = qbit } },
+	{ MODKEY|ControlMask,           XK_n,	   	spawn,				{.v = nb } },
 	
 	{ MODKEY|ShiftMask,				0x5c,	   	spawn,				{.v = themix } },
 	{ MODKEY|ShiftMask,           0xff1b,	   	spawn,				{.v = KILL } },
@@ -153,24 +158,30 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_m,	   	spawn,				{.v = VM } },
 	{ MODKEY|ShiftMask,				XK_s,	   	spawn,				{.v = SC } },
 	{ MODKEY|ShiftMask,				XK_a,	   	spawn,				{.v = AFT } },
+	{ MODKEY|ShiftMask,				XK_b,	   	spawn,				{.v = QB } },
 
 	{ MODKEY|ControlMask|ShiftMask,	XK_A,	   	spawn,				{.v = PrtScrA } },
 	{ MODKEY|ControlMask|ShiftMask,	XK_s,	   	spawn,				{.v = PrtScrS } },
 
 	{ Mod1Mask|ControlMask,         XK_t,	   	spawn,          	{.v = dmenuThemes } },
 	{ Mod1Mask|ControlMask,         XK_e,	   	spawn,          	{.v = dmenuEmojis } },
-	{ Mod1Mask|ControlMask,         XK_m,	   	spawn,          	{.v = displaySelect } },
 	{ Mod1Mask|ControlMask,         XK_a,	   	spawn,          	{.v = dmenuAudio } },
 	{ Mod1Mask|ControlMask,         XK_s,	   	spawn,          	{.v = dmenuSpid } },
+	{ Mod1Mask|ControlMask,         XK_m,	   	spawn,          	{.v = dmenuMount } },
+	{ Mod1Mask|ControlMask,         XK_d,	   	spawn,          	{.v = displaySelect } },
 	{ Mod1Mask|ControlMask,         XK_x,	   	spawn,          	{.v = TpCtl } },
 	{ Mod1Mask|ControlMask,         XK_q,	   	spawn,          	{.v = saveDots } },
 
 	{ MODKEY,                       XK_j,      	focusstack,     	{.i = +1 } },
 	{ MODKEY,                       XK_k,      	focusstack,     	{.i = -1 } },
+	{ MODKEY,                       XK_Down,      	focusstack,     	{.i = +1 } },
+	{ MODKEY,                       XK_Up,      	focusstack,     	{.i = -1 } },
 	{ MODKEY,                       XK_i,      	incnmaster,     	{.i = +1 } },
 	{ MODKEY,                       XK_p,      	incnmaster,     	{.i = -1 } },
 	{ MODKEY,                       XK_h,      	setmfact,	   		{.f = -0.05} },
 	{ MODKEY,                       XK_l,      	setmfact,	   		{.f = +0.05} },
+	{ MODKEY,                       XK_Left,      	setmfact,	   		{.f = -0.05} },
+	{ MODKEY,                       XK_Right,      	setmfact,	   		{.f = +0.05} },
 	{ MODKEY,                       XK_Tab,    	view,           	{0} },
 	{ MODKEY,                       XK_t,      	setlayout,      	{.v = &layouts[0]} },
 	//{ MODKEY,                       XK_f,      	setlayout,      	{.v = &layouts[1]} },
@@ -178,9 +189,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_0,      	view,           	{.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  	focusmon,       	{.i = -1 } },
 	{ MODKEY,                       XK_period, 	focusmon,       	{.i = +1 } },
+	{ MODKEY,						XK_f,      	togglebar,      	{0} },
 	{ MODKEY|ShiftMask,             XK_space,  	togglefloating, 	{0} },
 	{ MODKEY|ShiftMask,             XK_c,      	killclient,     	{0} },
-	{ MODKEY|ShiftMask,             XK_b,      	togglebar,      	{0} },
 	{ MODKEY|ShiftMask,             XK_Return, 	zoom,		   		{0} },
 	{ MODKEY|ShiftMask,             XK_n,      	setlayout,      	{.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_0,      	tag,            	{.ui = ~0 } },

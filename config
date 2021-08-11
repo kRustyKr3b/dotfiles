@@ -18,8 +18,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 #exec_always --no-startup-id trayer --align right --height 20
 #exec --no-startup-id picom
 #exec albert
+exec --no-startup-id nm-applet
 exec --no-startup-id dunst
-exec --no-startup-id lxsession
 exec_always --no-startup-id wal -R
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
 
@@ -38,7 +38,7 @@ bindsym Mod4+D exec dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#007BAD' -sf '#EE
 # start firefox
 bindsym Mod4+B exec firefox
 # start termite
-bindsym Mod4+T exec alacritty
+bindsym Mod4+T exec termite
 # start qutebrowser
 bindsym Mod4+Q exec qutebrowser
 # start spacefm
@@ -63,6 +63,8 @@ bindsym Mod4+KP_Next exec idea
 bindsym Mod4+KP_Left exec mysql-workbench
 # start qtcreator
 bindsym Mod4+KP_Begin exec qtcreator
+# start arduino
+bindsym Mod4+KP_Right exec arduino
 # start lxappearance
 bindsym Mod4+backslash exec lxappearance
 
@@ -73,6 +75,8 @@ bindsym Control+Mod4+L exec betterlockscreen -l dim -t "BTFO"
 bindsym Control+Mod4+D exec discord
 # start qbittorent
 bindsym Control+Mod4+Q exec qbittorrent
+# start newsboat
+bindsym Control+Mod4+N exec newsboat
 
 
 # start brave
@@ -112,8 +116,10 @@ bindsym Control+Mod1+M exec ~/scripts/dmenumount.sh
 # audio output
 bindsym Control+Mod1+A exec ~/scripts/audioctrl.sh
 # spid
-bindsym Control+Mod1+S exec  ~/scripts/spid.sh && notify-send DONE
-#
+bindsym Control+Mod1+S exec ~/scripts/spid.sh
+# saveDots
+bindsym Control+Mod1+Q exec ~/scripts/saveDots.sh
+
 
 
 

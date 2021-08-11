@@ -10,6 +10,7 @@ set tabstop=4
 
 let mapleader="\<Space>"
 nmap <silent> <leader>r "=nr2char(getchar())<cr>P
+nmap <leader>p :Glow<CR>
 map j gj
 map k gk
 map <leader>y "+Y
@@ -33,14 +34,14 @@ nnoremap <M--> <C-W>5-
 nnoremap <M-=> <C-W>5+
 
 
-call plug#begin('/home/shaolinrus/.vim/autoload')
+call plug#begin('/home/shaolinrus/.local/share/nvim/site/autoload')
 	Plug 'Valloric/YouCompleteMe'
 	Plug 'itchyny/lightline.vim'
 	Plug 'preservim/nerdtree'
 	Plug 'mboughaba/i3config.vim'
 	Plug 'justmao945/vim-clang'
-	"Plug 'npxbr/glow.nvim', {'do': ':GlowInstall', 'branch': 'main'}
 	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+	Plug 'npxbr/glow.nvim', {'do': ':GlowInstall', 'branch': 'main'}
 
 	Plug 'navarasu/onedark.nvim'
 	Plug 'dylanaraps/wal.vim'
