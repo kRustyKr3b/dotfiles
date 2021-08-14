@@ -35,12 +35,10 @@ bindsym F12 scratchpad show
 bindsym Mod4+Return exec alacritty
 # start dmenu 
 bindsym Mod4+D exec dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#007BAD' -sf '#EEEEEE' -fn 'Iosevka Term-9'
-# start firefox
-bindsym Mod4+B exec firefox
+# start qutebrowser
+bindsym Mod4+B exec qutebrowser
 # start termite
 bindsym Mod4+T exec termite
-# start qutebrowser
-bindsym Mod4+Q exec qutebrowser
 # start spacefm
 bindsym Mod4+N exec spacefm
 # file manager
@@ -79,8 +77,8 @@ bindsym Control+Mod4+Q exec qbittorrent
 bindsym Control+Mod4+N exec newsboat
 
 
-# start brave
-bindsym Shift+Mod4+B exec brave
+# start firefox
+bindsym Shift+Mod4+B exec firefox
 # start sgtk
 bindsym Shift+Mod4+D exec jgmenu
 # start virt-manager

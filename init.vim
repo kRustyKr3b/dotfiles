@@ -1,5 +1,5 @@
 filetype plugin on
-set more number modifiable incsearch cursorline showmatch smartcase smartindent termguicolors 
+set more number modifiable incsearch cursorline showmatch ignorecase smartcase smartindent termguicolors 
 set pastetoggle=<F11>
 set shiftwidth=4
 set softtabstop=4

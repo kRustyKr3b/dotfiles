@@ -133,7 +133,7 @@ static Key keys[] = {
 
 	{ MODKEY,				        XK_Return,	spawn,				{.v = termcmd } },
 	{ MODKEY|ControlMask,			XK_Return,	spawn,				{.v = termcmd1 } },
-	{ MODKEY,                       XK_b,		spawn,				{.v = webcmd} },
+	{ MODKEY,                       XK_b,		spawn,				{.v = QB} },
 	{ MODKEY,                       XK_d,		spawn,				{.v = dmenucmd } },
 	{ MODKEY,                       XK_g,		spawn,				{.v = ranger } },
 	{ MODKEY,                       XK_m,		spawn,				{.v = mocp } },
@@ -158,7 +158,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_m,	   	spawn,				{.v = VM } },
 	{ MODKEY|ShiftMask,				XK_s,	   	spawn,				{.v = SC } },
 	{ MODKEY|ShiftMask,				XK_a,	   	spawn,				{.v = AFT } },
-	{ MODKEY|ShiftMask,				XK_b,	   	spawn,				{.v = QB } },
+	{ MODKEY|ShiftMask,				XK_b,	   	spawn,				{.v = webcmd } },
 
 	{ MODKEY|ControlMask|ShiftMask,	XK_A,	   	spawn,				{.v = PrtScrA } },
 	{ MODKEY|ControlMask|ShiftMask,	XK_s,	   	spawn,				{.v = PrtScrS } },
