@@ -1,4 +1,4 @@
-config.load_autoconfig(False)
+config.load_autoconfig()
 c.auto_save.session = True
 c.colors.downloads.start.bg = '#03b0bc'
 c.colors.downloads.start.fg = '#1e1e1e'

@@ -4,6 +4,8 @@ set pastetoggle=<F11>
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4 
+set undodir=~/.config/nvim/undodir
+set undofile
 
 "let &t_8f = "\e[38;2;%lu;%lu;%lum"
 "let &t_8b = "\e[38;2;%lu;%lu;%lum"
