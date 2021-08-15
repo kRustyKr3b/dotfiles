@@ -104,7 +104,7 @@ static const char *ID[]  = { "idea", NULL };
 static const char *MY[]  = { "mysql-workbench", NULL };
 static const char *QT[]  = { "qtcreator", NULL };
 
-static const char *lock[]  = { "betterlockscreen", "-l",  "-t", "BTFO", NULL };
+static const char *lock[]  = { "betterlockscreen", "-l", NULL };
 static const char *discord[]  = { "discord", NULL };
 static const char *qbit[]  = { "qbittorrent", NULL };
 static const char *nb[]  = { "alacritty", "-e", "newsboat", NULL };
