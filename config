@@ -3,6 +3,7 @@ default_border pixel 2
 smart_borders on
 hide_edge_borders smart_no_gaps
 #focus_follows_mouse no
+#test
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
