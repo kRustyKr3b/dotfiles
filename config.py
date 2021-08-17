@@ -34,3 +34,4 @@ c.tabs.title.format = '{audio}{current_title}'
 c.zoom.default = 67
 c.fonts.default_family = "Iosevka"
 c.fonts.default_size = "12px"
+c.downloads.position = "bottom"
