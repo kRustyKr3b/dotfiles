@@ -120,6 +120,7 @@ static const char *dwmExit[]  = { "/home/shaolinrus/scripts/dwmExit.sh", NULL };
 static const char *TpCtl[]  = { "/home/shaolinrus/scripts/tpctrl.sh", NULL};
 static const char *micMute[]  = { "/home/shaolinrus/scripts/mic.sh", NULL};
 static const char *saveDots[]  = { "/home/shaolinrus/scripts/saveDots.sh", NULL };
+static const char *ytdl[]  = { "/home/shaolinrus/scripts/dl.sh", NULL };
 
 static Key keys[] = {
 	/* modifier             key							 function        argument */
@@ -172,6 +173,7 @@ static Key keys[] = {
 	{ Mod1Mask|ControlMask,         XK_d,	   	spawn,          	{.v = displaySelect } },
 	{ Mod1Mask|ControlMask,         XK_x,	   	spawn,          	{.v = TpCtl } },
 	{ Mod1Mask|ControlMask,         XK_q,	   	spawn,          	{.v = saveDots } },
+	{ Mod1Mask|ControlMask,         XK_y,	   	spawn,          	{.v = ytdl } },
 
 	{ MODKEY,                       XK_j,      	focusstack,     	{.i = +1 } },
 	{ MODKEY,                       XK_k,      	focusstack,     	{.i = -1 } },

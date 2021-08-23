@@ -118,6 +118,8 @@ bindsym Control+Mod1+A exec ~/scripts/audioctrl.sh
 bindsym Control+Mod1+S exec ~/scripts/spid.sh
 # saveDots
 bindsym Control+Mod1+Q exec ~/scripts/saveDots.sh
+# youtube-dl
+bindsym Control+Mod1+Y exec ~/scripts/dl.sh
 
 
 
