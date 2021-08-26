@@ -1,7 +1,7 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_QPA_PLATFORMTHEME="qt5ct"
 export GITHUB_TOKEN="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"
 #export MANPAGER="nvim -c 'set ft=man' -"
 export PATH=$PATH:/home/shaolinrus/.local/bin
@@ -33,6 +33,7 @@ alias arc='nvim ~/.config/alacritty/alacritty.yml'
 alias ch='cp ~/suckless/dwm-6.2/config.h ~/dotfiles'
 alias cf='cp ~/.mozilla/firefox/6wm86drv.default-release/chrome/userChrome.css ~/dotfiles'
 
+alias n='nvim'
 alias B='bluetoothctl'
 alias R='ranger'
 alias S='startx'
@@ -42,11 +43,13 @@ alias IP='curl ifconfig.co'
 alias XX='xrdb -merge ~/.Xresources'
 alias sv='sudo vim'
 alias sn='sudo nvim'
-alias sp='sudo pacman -S'
+
+alias sp='sudo pacman'
+alias sps='pacman -Ss'
 alias sr='sudo pacman -Rnscu'
 alias sR='sudo pacman -R'
 alias pp='paru -Syyu --sudoloop'
-alias n='nvim'
+
 alias wireshark='gksu wireshark'
 alias rr='rustc'
 alias MD='/home/shaolinrus/suckless/dwm-6.2 && sudo make clean install && cd '
