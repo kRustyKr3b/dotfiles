@@ -20,6 +20,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 #exec --no-startup-id picom
 #exec albert
 exec --no-startup-id nm-applet
+exec --no-startup-id udiskie
 exec --no-startup-id dunst
 exec_always --no-startup-id wal -R
 exec_always --no-startup-id ~/.config/i3/polybar.sh &
