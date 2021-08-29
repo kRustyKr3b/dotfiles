@@ -1,7 +1,8 @@
 #!/bin/sh
-lxsession &
 wal -R &
 dunst &
+udiskie -t &
+lxsession &
  
 xset r rate 200 30 &
 xset -b &
@@ -17,7 +18,7 @@ do
 	BAT=$(acpi | awk '{print $4}' | cut -d, -f1)
 	DISCC=$(df -h | awk '/sda1/ {print $5}')
  
-      xsetroot -name "[󱛟 $DISCC][󰕾 $VOL][󰔏 $TEMP][󰤥$IP][󰀂$IPE][$(/home/shaolinrus/scripts/infoBat.sh)$BAT][$(/home/shaolinrus/scripts/layout.sh)][󱑍 $LOCALTIME|$LOCALDATE]"
+      xsetroot -name "[󱛟$DISCC][󰕾$VOL][󰔏$TEMP][󰤥$IP][󰀂$IPE][$(/home/shaolinrus/scripts/infoBat.sh)$BAT][$(/home/shaolinrus/scripts/layout.sh)][󱑍$LOCALTIME|$LOCALDATE]"
       sleep 1
 done &
 echo "$(date): Starting dwn" >> /home/shaolinrus/logs/$(date +%Y-%m-%d_%H.dwm.log)
