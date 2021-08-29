@@ -15,7 +15,7 @@ nmap <silent> <leader>r "=nr2char(getchar())<cr>P
 nmap <leader>p :Glow<CR>
 map j gj
 map k gk
-map <leader>y "+y$
+map <leader>y "+Y
 map <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
