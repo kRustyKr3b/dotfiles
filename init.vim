@@ -10,6 +10,9 @@ set undofile
 "let &t_8f = "\e[38;2;%lu;%lu;%lum"
 "let &t_8b = "\e[38;2;%lu;%lu;%lum"
 
+
+
+"maps
 let mapleader="\<Space>"
 nmap <silent> <leader>r "=nr2char(getchar())<cr>P
 nmap <leader>p :Glow<CR>

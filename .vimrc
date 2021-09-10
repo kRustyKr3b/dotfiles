@@ -12,7 +12,6 @@ set nocompatible
 set wildmenu
 "set encoding=utf-8
 
-
 "execute "set t_8f=\e[38;2;%lu;%lu;%lum"
 "execute "set t_8b=\e[48;2;%lu;%lu;%lum"
 
@@ -39,14 +38,13 @@ onoremap <F9> <C-C>za
 vnoremap <F9> zf
 
 
-call plug#begin('/home/rus_og/.vim/autoload')
+call plug#begin("/home/rus_og/.vim/autoload/")
 	Plug 'Valloric/YouCompleteMe'
 	Plug 'justmao945/vim-clang'
 	Plug 'mboughaba/i3config.vim'
 	Plug 'preservim/nerdtree'
 	Plug 'itchyny/lightline.vim'
 	Plug 'dylanaraps/wal.vim'
-	Plug 'npxbr/glow.nvim', {'do': ':GlowInstall', 'branch': 'main'}
 
 	
 	Plug 'joshdick/onedark.vim'
@@ -63,4 +61,4 @@ aug end
 
     set laststatus=2
     let NERDTreeShowHidden=1
-	colorscheme wal
+	colorscheme molokai
