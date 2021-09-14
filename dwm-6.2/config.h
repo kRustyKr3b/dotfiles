@@ -81,7 +81,7 @@ static const char *upBRT[] = { "brightnessctl", "set", "+10%", NULL };
 static const char *downBRT[] = { "brightnessctl", "set", "10%-", NULL };
 
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *termcmd1[]  = { "alacritty", NULL };
+static const char *termcmd1[]  = { "urxvt", NULL };
 static const char *webcmd[]  = { "firefox", NULL };
 static const char *ranger[]  = { "alacritty", "-e", "ranger", NULL };
 static const char *mocp[]  = { "alacritty", "-e", "mocp", NULL };

@@ -1,6 +1,7 @@
 filetype plugin on
 set more number modifiable incsearch cursorline showmatch ignorecase smartcase smartindent termguicolors 
 set pastetoggle=<F11>
+set encoding=utf-8
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4 
@@ -61,6 +62,11 @@ aug i3config_ft_detection
     au BufNewFile,BufRead /home/shaolinrus/.config/i3/config setfiletype i3config
 aug end
 
+
+	" Let clangd fully control code completion
+	let g:ycm_clangd_uses_ycmd_caching = 0
+	" Use installed clangd, not YCM-bundled clangd which doesn't get updates.
+	let g:ycm_clangd_binary_path = exepath("clangd")
     set laststatus=2
     let NERDTreeShowHidden=1
 	let g:Hexokinase_highlighters = ['backgroundfull']
