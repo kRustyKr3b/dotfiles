@@ -59,12 +59,6 @@ bindsym Mod4+KP_End exec codeblocks
 bindsym Mod4+KP_Down exec blender 
 # start idea
 bindsym Mod4+KP_Next exec idea 
-# start mysql
-bindsym Mod4+KP_Left exec mysql-workbench
-# start qtcreator
-bindsym Mod4+KP_Begin exec qtcreator
-# start arduino
-bindsym Mod4+KP_Right exec arduino
 # start lxappearance
 bindsym Mod4+backslash exec lxappearance
 
