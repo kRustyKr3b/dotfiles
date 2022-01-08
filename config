@@ -73,10 +73,11 @@ bindsym Control+Mod4+Q exec qbittorrent
 bindsym Control+Mod4+N exec newsboat
 
 
+
 # start firefox
 bindsym Shift+Mod4+B exec firefox
 # start sgtk
-bindsym Shift+Mod4+D exec jgmenu
+bindsym Shift+Mod4+D exec jgmenu_run
 # start virt-manager
 bindsym Shift+Mod4+M exec virt-manager
 # android file transfer
@@ -115,6 +116,10 @@ bindsym Control+Mod1+S exec ~/scripts/spid.sh
 bindsym Control+Mod1+Q exec ~/scripts/saveDots.sh
 # youtube-dl
 bindsym Control+Mod1+Y exec ~/scripts/dl.sh
+#dunst kill notification
+bindsym Control+Mod1+Space exec ~/scripts/ds.sh
+#dunst kill all notifications
+bindsym Control+Mod1+Shift+Space exec ~/scripts/dsa.sh
 
 
 

@@ -74,4 +74,4 @@ aug end
 	let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
 	let g:onedark_style = 'darker'
 	
-	colorscheme gotham256
+	colorscheme PaperColor

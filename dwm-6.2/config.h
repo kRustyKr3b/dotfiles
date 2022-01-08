@@ -74,9 +74,10 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *upvol[] = { "amixer", "-q", "sset", "Master", "5%+", NULL };
-static const char *downvol[] = { "amixer", "-q", "sset", "Master", "5%-", NULL };
-static const char *mute[] = { "amixer","-q", "-D", "pulse", "sset", "Master", "toggle", NULL };
+
+static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
+static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
+static const char *mute[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };
 static const char *upBRT[] = { "brightnessctl", "set", "+10%", NULL };
 static const char *downBRT[] = { "brightnessctl", "set", "10%-", NULL };
 
@@ -85,7 +86,7 @@ static const char *termcmd1[]  = { "urxvt", NULL };
 static const char *webcmd[]  = { "firefox", NULL };
 static const char *ranger[]  = { "alacritty", "-e", "ranger", NULL };
 static const char *mocp[]  = { "alacritty", "-e", "mocp", NULL };
-static const char *jgmenu[]  = { "jgmenu", "&&", "rm","~/.jgmenu-lockfile", NULL };
+static const char *jgmenu[]  = { "jgmenu_run", NULL };
 static const char *FX[]  = { "spacefm", NULL };
 static const char *SC[]  = { "scrcpy", NULL };
 static const char *VM[]  = { "virt-manager", NULL };
@@ -119,6 +120,8 @@ static const char *TpCtl[]  = { "/home/shaolinrus/scripts/tpctrl.sh", NULL};
 static const char *micMute[]  = { "/home/shaolinrus/scripts/mic.sh", NULL};
 static const char *saveDots[]  = { "/home/shaolinrus/scripts/saveDots.sh", NULL };
 static const char *ytdl[]  = { "/home/shaolinrus/scripts/dl.sh", NULL };
+static const char *ds[]  = { "/home/shaolinrus/scripts/ds.sh", NULL };
+static const char *dsa[]  = { "/home/shaolinrus/scripts/dsa.sh", NULL };
 
 static Key keys[] = {
 	/* modifier             key							 function        argument */
@@ -160,6 +163,10 @@ static Key keys[] = {
 
 	{ MODKEY|ControlMask|ShiftMask,	XK_A,	   	spawn,				{.v = PrtScrA } },
 	{ MODKEY|ControlMask|ShiftMask,	XK_s,	   	spawn,				{.v = PrtScrS } },
+
+	{ 0|ControlMask,	XK_space,	   	spawn,				{.v = ds } },
+	{ 0|ControlMask|ShiftMask,	XK_space,	   	spawn,				{.v = dsa } },
+
 
 	{ Mod1Mask|ControlMask,         XK_t,	   	spawn,          	{.v = dmenuThemes } },
 	{ Mod1Mask|ControlMask,         XK_e,	   	spawn,          	{.v = dmenuEmojis } },
