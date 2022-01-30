@@ -77,13 +77,13 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 
 static const char *upvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
-static const char *mute[] = { "pactl", "set-source-mute", "@DEFAULT_SOURCE@", "toggle", NULL };
+static const char *mute[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *upBRT[] = { "brightnessctl", "set", "+10%", NULL };
 static const char *downBRT[] = { "brightnessctl", "set", "10%-", NULL };
 
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *termcmd1[]  = { "urxvt", NULL };
-static const char *webcmd[]  = { "firefox", NULL };
+static const char *webcmd[]  = { "firefox", "--private-window", NULL };
 static const char *ranger[]  = { "alacritty", "-e", "ranger", NULL };
 static const char *mocp[]  = { "alacritty", "-e", "mocp", NULL };
 static const char *jgmenu[]  = { "jgmenu_run", NULL };

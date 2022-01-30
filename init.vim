@@ -72,6 +72,5 @@ aug end
 	let g:Hexokinase_highlighters = ['backgroundfull']
 	let g:Hexokinase_refreshEvents = ['TextChanged', 'InsertLeave', 'BufRead']
 	let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
-	let g:onedark_style = 'darker'
 	
-	colorscheme PaperColor
+	colorscheme onedark
