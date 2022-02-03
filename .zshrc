@@ -47,8 +47,6 @@ alias AIR='sudo airmon-ng'
 
 alias sp='sudo pacman'
 alias sps='pacman -Ss'
-alias sr='sudo pacman -Rnscu'
-alias sR='sudo pacman -R'
 alias pp='paru -Syyu --sudoloop'
 
 alias wireshark='gksu wireshark'
