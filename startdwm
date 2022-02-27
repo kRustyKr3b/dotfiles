@@ -19,7 +19,7 @@ do
 	BAT=$(acpi | awk '{print $4}' | cut -d, -f1)
 	DISCC=$(df -h | awk '/sda1/ {print $5}')
  
-    xsetroot -name "[󱛟$DISCC][󰔏$TEMP][󰤥$IP][󰀂$IPE][$(/home/shaolinrus/scripts/infoBat.sh)$BAT][$(/home/shaolinrus/scripts/layout.sh)][󱑍$LOCALTIME|$LOCALDATE]"
+    xsetroot -name "[󱛟$DISCC] [󰔏$TEMP] [󰤥$IP] [󰀂$IPE] [$(/home/shaolinrus/scripts/infoBat.sh)$BAT] [$(/home/shaolinrus/scripts/layout.sh)] [󱑍$LOCALTIME|$LOCALDATE]"
     sleep 1
 done &
 dwm

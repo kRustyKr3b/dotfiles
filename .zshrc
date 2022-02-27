@@ -7,8 +7,8 @@ export GITHUB_TOKEN="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"
 export PATH=$PATH:/home/shaolinrus/.local/bin
 
 HISTFILE=/home/shaolinrus/.config/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 
 setopt sharehistory extendedhistory autocd
 xset r rate 200 30
@@ -23,7 +23,7 @@ PS1="%B%F{$(cat ~/prompt_cols | cut -d. -f1)}[%n%f%F{#888888}@%f%F{$(cat ~/promp
 alias zrc='nvim ~/.zshrc'
 alias irc='nvim ~/.config/i3/config'
 alias prc='nvim ~/.config/polybar/config.ini'
-alias drc='nvim ~/suckless/dwm-6.2/config.h'
+alias drc='nvim ~/suckless/dwm-6.3/config.h'
 alias xrc='sudo nvim /usr/local/bin/startdwm'
 alias XRC='nvim ~/.Xresources'
 alias F='nvim ~/.mozilla/firefox/6wm86drv.default-release/chrome/userChrome.css'
@@ -51,7 +51,7 @@ alias pp='paru -Syyu --sudoloop'
 
 alias wireshark='gksu wireshark'
 alias rr='rustc'
-alias MD='/home/shaolinrus/suckless/dwm-6.2 && sudo make clean install && cd '
+alias MD='/home/shaolinrus/suckless/dwm-6.3 && sudo make clean install && cd '
 alias ka='killall'
 alias stl='sudo systemctl'
 alias ls='exa -F --color=auto --group-directories-first'
