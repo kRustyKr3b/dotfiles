@@ -3,6 +3,7 @@ wal -R &
 dunst &
 lxsession &
 udiskie -n &
+wmname LG3D
  
 xset r rate 200 30 &
 xset -b &

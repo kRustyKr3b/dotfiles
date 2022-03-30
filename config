@@ -71,6 +71,8 @@ bindsym Control+Mod4+D exec discord
 bindsym Control+Mod4+Q exec qbittorrent
 # start newsboat
 bindsym Control+Mod4+N exec newsboat
+# start dunstctl close
+bindsym Control+Space exec dunstctl close
 
 
 
@@ -96,6 +98,8 @@ bindsym Print exec maim  | tee ~/Screenshots/$(date +%s).png | xclip -selection 
 bindsym Control+Shift+Mod4+A exec maim -i $(xdotool getactivewindow) | tee ~/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png && notify-send -t 150 "  "
 # select a SS
 bindsym Control+Shift+Mod4+S exec maim -s | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage shadow.png && notify-send   -t 150 "  "
+# start dunstctl close-all
+bindsym Control+Shift+Space exec dunstctl close-all
 
 
 # pick a theme
