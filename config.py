@@ -35,3 +35,4 @@ c.zoom.default = 75
 c.fonts.default_family = "Iosevka"
 c.fonts.default_size = "12px"
 c.downloads.position = "bottom"
+c.downloads.remove_finished = 3
