@@ -41,6 +41,7 @@ alias IP='curl ifconfig.co'
 alias XX='xrdb -merge ~/.Xresources'
 alias sv='sudo vim'
 alias sn='sudo nvim'
+alias fb='fastboot'
 alias AIR='sudo airmon-ng'
 
 alias sp='sudo pacman'
