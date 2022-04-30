@@ -13,8 +13,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 //static const int usealtbar     = 1;          /* 1 means use non-dwm status bar */
 //static const char *altbarclass = "Polybar";  /* Alternate bar class name */
-static const char *fonts[]          = { "Iosevka Term :size=08", "Material Design Icons:size=09"};
-static const char dmenufont[]       = "Iosevka Term :size=09";
+static const char *fonts[]          = { "Iosevka Term:size=8", "Material Design Icons:size=9"};
+static const char dmenufont[]       = "Iosevka Term:size=9";
 static const char col_gray0[]       = "#000000";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -34,7 +34,7 @@ static const char scratchpadname[] = "Чернобыль";
 static const char *scratchpadcmd[] = { "alacritty", "-t", scratchpadname, NULL };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "VIIII" };
 
 static const Rule rules[] = {
 	/* xprop(1):

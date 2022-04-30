@@ -40,13 +40,13 @@ nnoremap <M--> <C-W>5-
 nnoremap <M-=> <C-W>5+
 
 
-call plug#begin('/home/shaolinrus/.local/share/nvim/site/autoload')
+call plug#begin('/home/shaolinrus/.local/share/nvim/site/"autoload')
 	Plug 'Valloric/YouCompleteMe'
 	Plug 'itchyny/lightline.vim'
 	Plug 'preservim/nerdtree'
 	Plug 'mboughaba/i3config.vim'
 	Plug 'justmao945/vim-clang'
-	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+"	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 	Plug 'npxbr/glow.nvim', {'do': ':GlowInstall', 'branch': 'main'}
 
 	Plug 'navarasu/onedark.nvim'
