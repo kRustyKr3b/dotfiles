@@ -2,7 +2,7 @@
 wal -R &
 dunst &
 udiskie -n &
-connman-gtk &
+nm-applet &
 wmname LG3D
  
 xset r rate 200 30 &
@@ -14,14 +14,13 @@ while true
 do
 	LOCALTIME=$(date "+%H:%M:%S")
 	LOCALDATE=$(date "+%a, %d.%m")
-	IP=$(ip addr show wlan0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1 | cut -d. -f3-4) # can get confused if you use vmware
-	IPE=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1 | cut -d. -f3-4)
+	IP=$(ip addr show wlp1s0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1 | cut -d. -f3-4) # can get confused if you use vmware
+	IPE=$(ip addr show enp1s0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1 | cut -d. -f3-4)
 	TEMP=$(sensors | awk '/temp1/ {print $2}' | cut -c2-5)
 	BAT=$(acpi | awk '{print $4}' | cut -d, -f1)
-	DISCCU=$(df -h | awk '/sda2/ {print $3}')
-	DISCCA=$(df -h | awk '/sda2/ {print $4}')
+	DISCC=$(df -h | awk '/sda2/ {print $5}')
  
-    xsetroot -name "[󱛟$DISCCU/$DISCCA][󰔏$TEMP][󰤥$IP][󰀂$IPE][$(/home/shaolinrus/scripts/infoBat.sh)$BAT][$(/home/shaolinrus/scripts/layout.sh)][󱑍$LOCALTIME|$LOCALDATE]"
+    xsetroot -name "[󱛟$DISCC][󰔏$TEMP][󰤥$IP][󰀂$IPE][$(/home/shaolinrus/scripts/infoBat.sh)$BAT][$(/home/shaolinrus/scripts/layout.sh)][󱑍$LOCALTIME|$LOCALDATE]"
     sleep 1
 done &
 dwm

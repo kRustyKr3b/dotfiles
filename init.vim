@@ -40,7 +40,7 @@ nnoremap <M--> <C-W>5-
 nnoremap <M-=> <C-W>5+
 
 
-call plug#begin('/home/shaolinrus/.local/share/nvim/site/"autoload')
+call plug#begin('/home/shaolinrus/.local/share/nvim/site/autoload')
 	Plug 'Valloric/YouCompleteMe'
 	Plug 'itchyny/lightline.vim'
 	Plug 'preservim/nerdtree'
@@ -73,4 +73,4 @@ aug end
 	let g:Hexokinase_refreshEvents = ['TextChanged', 'InsertLeave', 'BufRead']
 	let g:Hexokinase_optInPatterns = 'full_hex,rgb,rgba,hsl,hsla,colour_names'
 	
-	colorscheme onedark
+	colorscheme gotham

@@ -2,7 +2,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export GITHUB_TOKEN="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"
+export GITHUB_TOKEN="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"
 #export MANPAGER="nvim -c 'set ft=man' -"
 export PATH=$PATH:/home/shaolinrus/.local/bin
 
@@ -45,6 +45,7 @@ alias fb='fastboot'
 alias AIR='sudo airmon-ng'
 
 alias sp='sudo pacman'
+alias SP='sudo pacman -S'
 alias sps='pacman -Ss'
 alias pp='paru -Syyu --sudoloop'
 
