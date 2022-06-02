@@ -102,7 +102,7 @@ static const char *AFT[]  = { "android-file-transfer", NULL };
 
 static const char *CB[]  = { "codeblocks", NULL };
 static const char *BL[]  = { "blender", NULL };
-static const char *ID[]  = { "idea", NULL };
+static const char *QT[]  = { "qtcreator", NULL };
 
 static const char *lock[]  = { "betterlockscreen", "-l", NULL };
 static const char *discord[]  = { "discord", NULL };
@@ -145,7 +145,7 @@ static Key keys[] = {
 	{ MODKEY,				        0xffab,		spawn,				{.v = calc } },
     { MODKEY,						0xff9c,		spawn,				{.v = CB } },
     { MODKEY,						0xff99,		spawn,				{.v = BL } },
-    { MODKEY,						0xff9b,		spawn,				{.v = ID } },
+    { MODKEY,						0xff9b,		spawn,				{.v = QT } },
 	
 	{ MODKEY|ControlMask,           XK_l,	   	spawn,				{.v = lock } },
 	{ MODKEY|ControlMask,           XK_d,	   	spawn,				{.v = discord } },
