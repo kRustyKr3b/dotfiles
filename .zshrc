@@ -2,7 +2,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export GITHUB_TOKEN="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"
+export GITHUB_TOKEN="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"
 #export MANPAGER="nvim -c 'set ft=man' -"
 export PATH=$PATH:/home/shaolinrus/.local/bin
 
