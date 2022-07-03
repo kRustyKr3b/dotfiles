@@ -1,4 +1,5 @@
 export EDITOR="nvim"
+export _JAVA_AWT_WM_NONREPARENTING=1
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
