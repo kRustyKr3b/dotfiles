@@ -88,6 +88,7 @@ static const char *webcmd[]  = { "firefox", "--private-window", NULL };
 static const char *ranger[]  = { "alacritty", "-e", "ranger", NULL };
 static const char *mocp[]  = { "alacritty", "-e", "mocp", NULL };
 static const char *jgmenu[]  = { "jgmenu_run", NULL };
+static const char *equT[]  = { "pulseaudio-equalizer", "toggle", NULL };
 static const char *FX[]  = { "thunar", NULL };
 static const char *SC[]  = { "scrcpy", NULL };
 static const char *VM[]  = { "virt-manager", NULL };
@@ -161,6 +162,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_s,	   	spawn,				{.v = SC } },
 	{ MODKEY|ShiftMask,				XK_a,	   	spawn,				{.v = AFT } },
 	{ MODKEY|ShiftMask,				XK_b,	   	spawn,				{.v = webcmd } },
+	{ MODKEY|ShiftMask,				XK_p,	   	spawn,				{.v = equT } },
 
 	{ MODKEY|ControlMask|ShiftMask,	XK_A,	   	spawn,				{.v = PrtScrA } },
 	{ MODKEY|ControlMask|ShiftMask,	XK_s,	   	spawn,				{.v = PrtScrS } },
