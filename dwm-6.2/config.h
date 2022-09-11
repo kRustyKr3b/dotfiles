@@ -92,7 +92,7 @@ static const char *equT[]  = { "pulseaudio-equalizer", "toggle", NULL };
 static const char *FX[]  = { "thunar", NULL };
 static const char *SC[]  = { "scrcpy", NULL };
 static const char *VM[]  = { "virt-manager", NULL };
-static const char *calc[]  = { "mate-calc", NULL };
+static const char *calc[]  = { "galculator", NULL };
 static const char *lxAppearance[]  = { "lxappearance", NULL };
 static const char *themix[]  = { "themix-gui", NULL };
 static const char *PrtScr[]  = {"/home/shaolinrus/scripts/PrtScr.sh", NULL };
@@ -107,12 +107,12 @@ static const char *BL[]  = { "blender", NULL };
 static const char *QT[]  = { "qtcreator", NULL };
 
 static const char *lock[]  = { "betterlockscreen", "-l", NULL };
-static const char *discord[]  = { "discord", NULL };
+static const char *rofi[]  = { "rofi", "-show", "run",  NULL };
 static const char *qbit[]  = { "qbittorrent", NULL };
 static const char *nb[]  = { "alacritty", "-e", "newsboat", NULL };
 
 static const char *dmenuThemes[]  = { "/home/shaolinrus/scripts/dwm_theme_picker.sh", NULL };
-static const char *dmenuEmojis[]  = { "/home/shaolinrus/scripts/dmenuunicode.sh", NULL };
+static const char *dmenuEmojis[]  = { "rofi","-show", "emoji", NULL };
 static const char *dmenuSpid[]  = { "/home/shaolinrus/scripts/spid.sh", NULL };
 static const char *dmenuAudio[]  = { "/home/shaolinrus/scripts/audioctrl.sh", NULL};
 static const char *dmenuMount[]  = { "/home/shaolinrus/scripts/dmenumount.sh", NULL};
@@ -139,7 +139,7 @@ static Key keys[] = {
 	{ MODKEY,				        XK_Return,	spawn,				{.v = termcmd } },
 	{ MODKEY|ControlMask,			XK_Return,	spawn,				{.v = termcmd1 } },
 	{ MODKEY,                       XK_b,		spawn,				{.v = QB} },
-	{ MODKEY,                       XK_d,		spawn,				{.v = dmenucmd } },
+	{ MODKEY,                       XK_d,		spawn,				{.v = rofi } },
 	{ MODKEY,                       XK_g,		spawn,				{.v = ranger } },
 	{ MODKEY,                       XK_m,		spawn,				{.v = mocp } },
 	{ MODKEY,                       XK_n,		spawn,				{.v = FX } },
@@ -150,7 +150,7 @@ static Key keys[] = {
     { MODKEY,						0xff9b,		spawn,				{.v = QT } },
 	
 	{ MODKEY|ControlMask,           XK_l,	   	spawn,				{.v = lock } },
-	{ MODKEY|ControlMask,           XK_d,	   	spawn,				{.v = discord } },
+	{ MODKEY|ControlMask,           XK_d,	   	spawn,				{.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_q,	   	spawn,				{.v = qbit } },
 	{ MODKEY|ControlMask,           XK_n,	   	spawn,				{.v = nb } },
 	
