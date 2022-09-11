@@ -3,7 +3,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export VISUAL="nvim"
 export SUDO_EDITOR="nvim"
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export GITHUB_TOKEN="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"
+export GITHUB_TOKEN="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"
 #export MANPAGER="nvim -c 'set ft=man' -"
 export PATH=$PATH:/home/shaolinrus/.local/bin
 
