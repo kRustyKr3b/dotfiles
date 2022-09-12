@@ -107,7 +107,7 @@ static const char *BL[]  = { "blender", NULL };
 static const char *QT[]  = { "qtcreator", NULL };
 
 static const char *lock[]  = { "betterlockscreen", "-l", NULL };
-static const char *rofi[]  = { "rofi", "-show", "run",  NULL };
+static const char *rofi[]  = { "rofi", "-show", "drun",  NULL };
 static const char *qbit[]  = { "qbittorrent", NULL };
 static const char *nb[]  = { "alacritty", "-e", "newsboat", NULL };
 
