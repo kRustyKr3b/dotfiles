@@ -19,7 +19,7 @@ zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 autoload -Uz compinit && compinit
-PS1="%B%F{$(cat ~/prompt_cols | cut -d. -f1)}[%n%f%F{#888888}@%f%F{$(cat ~/prompt_cols | cut -d. -f2)}%m %1~]%(#.#.$)%f%b "
+PS1="%B%F{$(cat ~/wal_themes/prompt_cols | cut -d. -f1)}[%n%f%F{#888888}@%f%F{$(cat ~/wal_themes/prompt_cols | cut -d. -f2)}%m %1~]%(#.#.$)%f%b "
 
 alias zrc='nvim ~/.zshrc'
 alias irc='nvim ~/.config/i3/config'

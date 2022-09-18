@@ -18,12 +18,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 
 #exec_always --no-startup-id trayer --align right --height 20
 #exec --no-startup-id picom
-#exec albert
-exec --no-startup-id nm-applet
-exec --no-startup-id udiskie
+exec --no-startup-id picom $
 exec --no-startup-id dunst
 exec_always --no-startup-id wal -R
-exec_always --no-startup-id ~/.config/i3/polybar.sh &
+exec_always --no-startup-id ~/.config/polybar/polybar.sh
 
 exec --no-startup-id "termite"
 for_window [class="Termite"] move scratchpad
@@ -36,7 +34,7 @@ bindsym F12 scratchpad show
 # start alacritty
 bindsym Mod4+Return exec alacritty
 # start dmenu 
-bindsym Mod4+D exec dmenu_run -nf '#BBBBBB' -nb '#222222' -sb '#007BAD' -sf '#EEEEEE' -fn 'Iosevka Term-9'
+bindsym Mod4+D exec rofi -show drun
 # start qutebrowser
 bindsym Mod4+B exec qutebrowser
 # start termite
@@ -75,9 +73,8 @@ bindsym Control+Mod4+N exec newsboat
 bindsym Control+Space exec dunstctl close
 
 
-
 # start firefox
-bindsym Shift+Mod4+B exec firefox
+bindsym Shift+Mod4+B exec firefox --private 
 # start sgtk
 bindsym Shift+Mod4+D exec jgmenu_run
 # start virt-manager
@@ -87,7 +84,9 @@ bindsym Shift+Mod4+A exec android-file-transfer
 # polybar toggle 
 bindsym Shift+Mod4+T exec polybar-msg cmd toggle
 # exit i3
-bindsym Shift+Mod4+E exec ~/scripts/exit.sh
+bindsym Shift+Mod4+E exec ~/scripts/i3Exit.sh
+# exit eq toggle
+bindsym Shift+Mod4+P exec echo "pulseaudio-equalizer toggle" | bash
 
 
 # gaps
@@ -121,10 +120,9 @@ bindsym Control+Mod1+Q exec ~/scripts/saveDots.sh
 # youtube-dl
 bindsym Control+Mod1+Y exec ~/scripts/dl.sh
 #dunst kill notification
-bindsym Control+Mod1+Space exec ~/scripts/ds.sh
+bindsym Control+Mod4+Space exec ~/scripts/ds.sh
 #dunst kill all notifications
-bindsym Control+Mod1+Shift+Space exec ~/scripts/dsa.sh
-
+bindsym Control+Mod4+Shift+Space exec ~/scripts/dsa.sh
 
 
 
